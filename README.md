@@ -1,5 +1,5 @@
 
-# mattermost-dev-tool-discussion
+# dev-tool-discussion
 
 This is a collection of common Dev Tools used by Mattermost Developers.  
 
