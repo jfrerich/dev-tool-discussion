@@ -22,6 +22,10 @@
   * [vim-scripts/tComment](#vim-scriptstcomment)
   * [tpope/vim-surround](#tpopevim-surround)
   * [tpope/vim-fugitive (git wrapper)](#tpopevim-fugitive-git-wrapper)
+    * [MAPPINGS - Available in the :Gstatus buffer](#mappings---available-in-the-gstatus-buffer)
+      * [Staging and resetting mappings](#staging-and-resetting-mappings)
+      * [Commit Mappings](#commit-mappings)
+      * [Miscellaneous mappings](#miscellaneous-mappings)
   * [tpope/vim-rhubarb](#tpopevim-rhubarb)
   * [junegunn/gv.vim](#junegunngvvim)
   * [easymotion/vim-easymotion](#easymotionvim-easymotion)
@@ -76,18 +80,19 @@
 
 ### Quickfix and Location Windows
 
-   (Using unimpaired.vim)
+  (Using unimpaired.vim)
 
     [q, ]q - :cnext, cprevious (mappings from unimpaired.vim)
     <leader>a :cclose -> close quickfix window
 
-    Location List Navigation 
-      [l, ]l - prev, next location list item
-      [L, ]L - first, last location list item
+  Location List Navigation
+
+    [l, ]l - prev, next location list item
+    [L, ]L - first, last location list item
 
 ### Buffers
 
-    Buffer list navigation
+  Buffer list navigation
 
     [b, ]b - prev, next buffer
     [B, ]B - first, last buffer
@@ -103,19 +108,20 @@
 
 ### How to edit word repeatedly through file
 
-Use gn / gN when CHANGING/DELETING matches <br>
-Use n / N when NAVIGATING to matches
+*   Use gn / gN when CHANGING/DELETING matches
+*   Use n / N when NAVIGATING to matches
+
 
     1. /word       - find "word"
     2. cgnNEW_WORD - change "word" to "NEW_WORD"
     3. .           - repeat change word
 
-      Above replaces the following sequence
+  Above replaces the following sequence
 
-        1. /word
-        2. visually select the word
-        3. cNEW_WORD
-        4. n.  n.  n.  n.
+    1. /word
+    2. visually select the word
+    3. cNEW_WORD
+    4. n.  n.  n.  n.
 
   Best option is to use 'terryma/vim-multiple-cursors'
 
@@ -154,7 +160,7 @@ Use n / N when NAVIGATING to matches
 
 ### Edit in place
 
-      <C-a>, <C-x> - increment/decrement number
+    <C-a>, <C-x> - increment/decrement number
 
 ### folding
 
@@ -164,54 +170,55 @@ Use n / N when NAVIGATING to matches
 
 ### Navigation
 
-|                                 |                   |                               |
-| -                               | -                 | -                             |
-| **Move cursor..**               | H, M, L           | Top, Middle, Bottom of Screen |
-|                                 | 5k                | up 5 rows                     |
-|                                 | 5j                | down 5 rows                   |
-| **Scroll current Line to..**    | zt,zz,zb          | top, middle, bottom of window |
-| **Move screen..**               | <C-y&gt;          | up one line                   |
-|                                 | <C-e&gt;          | down one line                 |
-| **Move cursor and screen..**    | <C-u&gt;          | up 1/2 page                   |
-|                                 | <C-d&gt;          | down 1/2 page                 |
-| **Split Window Navigation..**   | <C-H&gt;          | move to left split window     |
-|                                 | <C-J&gt;          | move to lower split window    |
-|                                 | <C-K&gt;          | move to above split window    |
-|                                 | <C-L&gt;          | move to right split window    |
-| **Go Through Jump Locations..** | <C-o&gt; <C-i&gt; |                               |
+|                                 |                 |                               |
+| -                               | -               | -                             |
+| **Move cursor..**               | H, M, L         | Top, Middle, Bottom of Screen |
+|                                 | 5k              | up 5 rows                     |
+|                                 | 5j              | down 5 rows                   |
+| **Scroll current Line to..**    | zt,zz,zb        | top, middle, bottom of window |
+| **Move screen..**               | `<C-y>`         | up one line                   |
+|                                 | `<C-e>`         | down one line                 |
+| **Move cursor and screen..**    | `<C-u>`         | up 1/2 page                   |
+|                                 | `<C-d>`         | down 1/2 page                 |
+| **Split Window Navigation..**   | `<C-H>`         | move to left split window     |
+|                                 | `<C-J>`         | move to lower split window    |
+|                                 | `<C-K>`         | move to above split window    |
+|                                 | `<C-L>`         | move to right split window    |
+| **Go Through Jump Locations..** | `<C-o>` `<C-i>` |                               |
 
 ## PLUGINS
 
 ### [junegunn/fzf.vim](https://github.com/junegunn/fzf) (fuzzy finder)
 
-  | Mapping               | Description                                     |
-  | -                     | -                                               |
-  | ;                     | :Buffers                                        |
-  | <leader&gt;ag         | search for file under cursor in files           |
-  | <leader&gt;<space&gt; | :Files                                          |
-  | <leader&gt;/          | search with 'Ag'                                |
-  | :Commits              | git commits                                     |
-  | :BCommits             | git commits for current buffer                  |
-  | :Ag                   | loads all files and file contents for searching |
-  | :History:             | Command history                                 |
-  | :History/             | Search history                                  |
-  | :Windows              | list of open windows in vim                     |
-  | :Commands             | : Commands                                      |
-  | :Maps                 | key mappings                                    |
+  | Mapping            | Description                                     |
+  | -                  | -                                               |
+  | ;                  | :Buffers                                        |
+  | `<leader>ag`       | search for file under cursor in files           |
+  | `<leader> <space>` | :Files                                          |
+  | `<leader>/`        | search with 'Ag'                                |
+  | `:Commits`         | git commits                                     |
+  | `:BCommits`        | git commits for current buffer                  |
+  | `:Ag`              | loads all files and file contents for searching |
+  | `:History:`        | Command history                                 |
+  | `:History/`        | Search history                                  |
+  | `:Windows`         | list of open windows in vim                     |
+  | `:Commands`        | : Commands                                      |
+  | `:Maps`            | key mappings                                    |
 
-    start search with ' to find exact match, not fuzzy find
+    start search with `'` to find exact match 
+    start search with `!` to find exclude match
 
 ### [terryma/vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors/)
 
-https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs
+[Video Examples](https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs)
 
-    make visual word selection
+make visual word selection first then ...
 
-        <C-n> - select additional words
-        c, r, i - to perform operation on selection
-        <Home> - move to beginning of line
-        <End> - move to end of line
-        <Up/Down> - move cursors up/down
+    <C-n> - select additional words
+    c, r, i - to perform operation on selection
+    <Home> - move to beginning of line
+    <End> - move to end of line
+    <Up/Down> - move cursors up/down
 
 ### [VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim/)
 
@@ -250,12 +257,12 @@ https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs
     :Gwrite
     :Gbrowse - open selected lines in browser (works with visual mode)
 
-MAPPINGS - These mappings are available in the :Gstatus buffer and the
-Fugitive object buffers
+#### MAPPINGS - Available in the :Gstatus buffer
 
       g?  show this help
 
-  Staging and resetting mappings
+##### Staging and resetting mappings
+
       s - Stage (add) the file or hunk under the cursor
       u - Unstage (reset) the file or hunk under the cursor
 
@@ -274,13 +281,13 @@ Fugitive object buffers
       q     close status
       P     patch 
 
-  Commit Mappings
+##### Commit Mappings
   
       cc    |:Gcommit|  Create a commit
       ca    Amend the last commit and edit the message 
       ce    Amend the last commit without editing the message 
 
-  Miscellaneous mappings
+##### Miscellaneous mappings
 
       gq    Close the status buffer.
       R     Reload the status buffer
@@ -420,14 +427,14 @@ https://www.diycode.cc/projects/fatih/vim-go
   | :GoDebugStepOut                    | Run all code in the current function and halt ("step out")                                                                                                                                                                        |
   | :GoDebugSet {var} {value}          | set the variable to value.  Cannot be string. limitation of delve                                                                                                                                                                 |
 
-  |   **Mappings**                                   |                                                                                                                                                                                                                                   |
-  | -                                  | -                                                                                                                                                                                                                                 |
-  | <F5&gt;                               | next breakpoint (:GoDebugContinue)                                                                                                                                                                                                |
-  | <F6&gt;                               | evaluate the <cword> under the cursor (:GoDebugPrint)                                                                                                                                                                             |
-  | <F9&gt;                               | add breakpoint (:GoDebugBreakpoint)                                                                                                                                                                                               |
-  | <F10&gt;                              | next line (:GoDebugNext) Will literally go to the line with active cursor in file!                                                                                                                                                |
-  | <F11&gt;                              | step into (:GoDebugStep)                                                                                                                                                                                                          |
-  | <S-F11&gt;                            | step out (:GoDebugStepOut)  Mapped in .vimrc                                                                                                                                                                                      |
+  |   **Mappings** |                                                                                    |
+  | -              | -                                                                                  |
+  | <F5&gt;        | next breakpoint (:GoDebugContinue)                                                 |
+  | <F6&gt;        | evaluate the <cword> under the cursor (:GoDebugPrint)                              |
+  | <F9&gt;        | add breakpoint (:GoDebugBreakpoint)                                                |
+  | <F10&gt;       | next line (:GoDebugNext) Will literally go to the line with active cursor in file! |
+  | <F11&gt;       | step into (:GoDebugStep)                                                           |
+  | <S-F11&gt;     | step out (:GoDebugStepOut)  Mapped in .vimrc                                       |
 
 #### _GODEBUG_OUTPUT Window_
 
@@ -487,24 +494,24 @@ https://www.diycode.cc/projects/fatih/vim-go
 
 #### Understand It (setup with auto g: commands in .vimrc so don't have to use shortcut to use)
 
-    Identifier Resolution (what is a function accepting or returning)
+  Identifier Resolution (what is a function accepting or returning)
 
-      <leader>i -> :GoInfo 
-      The following shows identifier informatino whenever move cursor
-        let g:go_auto_type_info = 1
-        set updatetime=100   -> set update frequency
+    <leader>i -> :GoInfo 
+    The following shows identifier information whenever move cursor
+      let g:go_auto_type_info = 1
+      set updatetime=100   -> set update frequency
 
-    Identifier Highlighting
+  Identifier Highlighting
 
-      :GoSameIds -> highlight all variables under cursor, across file
-      :GoSameIdsClear -> clear highlights
-      let g:go_auto_sameids = 1   -> always highlight when move cursor
+    :GoSameIds -> highlight all variables under cursor, across file
+    :GoSameIdsClear -> clear highlights
+    let g:go_auto_sameids = 1   -> always highlight when move cursor
 
 ### kien/ctrlp.vim (fuzzy finder)
 
   [Find anything from VIM tutorial](http://www.youtube.com/watch?v=9XrHk3xjYsw)
 
-    Once CtrlP is open
+  Once CtrlP is open
 
     <F5> - purge cache for current dir to get new files, remove deleted files and apply new ignore
     <C-d> - switch to filename search instead of full path
