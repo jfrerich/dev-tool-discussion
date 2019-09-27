@@ -166,7 +166,8 @@
 
     zM - close all folds
     zR - Open all folds
-    za - Open / close fold at cursor ( aliased to <space> )
+    zA - Open / close fold function ( aliased to <space> )
+    za - Open / close a fold at cursor 
 
 ### Navigation
 
