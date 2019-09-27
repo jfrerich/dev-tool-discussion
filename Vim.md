@@ -22,6 +22,8 @@
   * [vim-scripts/tComment](#vim-scriptstcomment)
   * [tpope/vim-surround](#tpopevim-surround)
   * [tpope/vim-fugitive (git wrapper)](#tpopevim-fugitive-git-wrapper)
+  * [tpope/vim-rhubarb](#tpopevim-rhubarb)
+  * [junegunn/gv.vim](#junegunngvvim)
   * [easymotion/vim-easymotion](#easymotionvim-easymotion)
   * [fatih/vim-go](#fatihvim-go)
     * [Mappings](#mappings)
@@ -74,22 +76,23 @@
 
 ### Quickfix and Location Windows
 
-    (Using unimpaired.vim)
+   (Using unimpaired.vim)
 
-      [q, ]q - :cnext, cprevious (mappings from unimpaired.vim)
-      <leader>a :cclose -> close quickfix window
+    [q, ]q - :cnext, cprevious (mappings from unimpaired.vim)
+    <leader>a :cclose -> close quickfix window
 
-      Location List Navigation 
-        [l, ]l - prev, next location list item
-        [L, ]L - first, last location list item
+    Location List Navigation 
+      [l, ]l - prev, next location list item
+      [L, ]L - first, last location list item
 
 ### Buffers
 
-      Buffer list navigation
-        [b, ]b - prev, next buffer
-        [B, ]B - first, last buffer
-        <C-^> or :b# - previous buffer
-        :b <name_of_file> -> open <name_of_file>
+    Buffer list navigation
+
+    [b, ]b - prev, next buffer
+    [B, ]B - first, last buffer
+    <C-^> or :b# - previous buffer
+    :b <name_of_file> -> open <name_of_file>
 
 ### Word Search / Modification
 
@@ -140,14 +143,14 @@ Use n / N when NAVIGATING to matches
 
 ### 'find' and 'till'
 
-      d, c, y -> delete, change, yank (Ex. cfn -> change to next 'n')
+    d, c, y -> delete, change, yank (Ex. cfn -> change to next 'n')
 
-      f{char} - to occurrence of {char} to the right.  Cursor is placed on {char} |inclusive|.
-      F{char} - to occurrence of {char} to the left.  Cursor is placed on {char} |exclusive|.
-      t{char} - Till before occurrence of {char} to the right. Cursor is placed on the character left of {char} |inclusive|.
-      T{char} - Till after occurrence of {char} to the left. Cursor is placed on the character right of {char} |exclusive|.
-      ; - Repeat latest f, t, F or T .
-      , - Repeat latest f, t, F or T in opposite direction. 
+    f{char} - to occurrence of {char} to the right.  Cursor is placed on {char} |inclusive|.
+    F{char} - to occurrence of {char} to the left.  Cursor is placed on {char} |exclusive|.
+    t{char} - Till before occurrence of {char} to the right. Cursor is placed on the character left of {char} |inclusive|.
+    T{char} - Till after occurrence of {char} to the left. Cursor is placed on the character right of {char} |exclusive|.
+    ; - Repeat latest f, t, F or T .
+    , - Repeat latest f, t, F or T in opposite direction. 
 
 ### Edit in place
 
@@ -179,7 +182,7 @@ Use n / N when NAVIGATING to matches
 
 ## PLUGINS
 
-### junegunn/fzf.vim (fuzzy finder)
+### [junegunn/fzf.vim](https://github.com/junegunn/fzf) (fuzzy finder)
 
   | Mapping               | Description                                     |
   | -                     | -                                               |
@@ -198,7 +201,7 @@ Use n / N when NAVIGATING to matches
 
     start search with ' to find exact match, not fuzzy find
 
-### terryma/vim-multiple-cursors
+### [terryma/vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors/)
 
 https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs
 
@@ -210,24 +213,24 @@ https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs
         <End> - move to end of line
         <Up/Down> - move cursors up/down
 
-### VundleVim/Vundle.vim
+### [VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim/)
 
     :PluginInstall
     :PluginList
     :PluginClean
     :PluginSearch
 
-### unimpaired.vim
+### [unimpaired.vim](https://github.com/tpope/vim-unimpaired/)
 
     [b, ]b jump to previous, next buffer
     [m, ]m jump to previous, next method
 
-### vim-scripts/tComment
+### [vim-scripts/tComment](https://github.com/vim-scripts/tComment/)
 
     gcc - comment current line
     gc - comment visual selected lines
 
-### tpope/vim-surround
+### [tpope/vim-surround](https://github.com/tpope/vim-surround)
 
     cs"' - change surrounding from " to '
     ds"  - delete " surrounding
@@ -235,7 +238,7 @@ https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs
     ysiw] - surround current word with [] (no spaces)
     ysiw[ - surround current word with [  ] (with spaces)
 
-### tpope/vim-fugitive (git wrapper)
+### [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive) (git wrapper)
 
     :Gcommit
     :Gdiff - diff current file
@@ -245,6 +248,7 @@ https://github.com/terryma/vim-multiple-cursors/wiki/Keystrokes-for-example-gifs
     :Gpush
     :Gstatus
     :Gwrite
+    :Gbrowse - open selected lines in browser (works with visual mode)
 
 MAPPINGS - These mappings are available in the :Gstatus buffer and the
 Fugitive object buffers
@@ -277,10 +281,20 @@ Fugitive object buffers
       ce    Amend the last commit without editing the message 
 
   Miscellaneous mappings
+
       gq    Close the status buffer.
       R     Reload the status buffer
 
-### easymotion/vim-easymotion
+### [tpope/vim-rhubarb](https://github.com/tpope/vim-rhubarb)
+
+  Plugin needed for :Gbrowse in vim-fugitive
+
+### [junegunn/gv.vim](https://github.com/junegunn/gv.vim)
+
+  :GV - Commit browser in Vim
+  :GV! - only list commits that affected the current file
+
+### [easymotion/vim-easymotion](https://github.com/easymotion/vim-easymotion/)
 
     s{char} - search {char} in file
     <leader> is '\' key
@@ -288,7 +302,7 @@ Fugitive object buffers
     <leader>j{char} - Line motion - highlight lines below
     <leader>k{char} - Line motion - highlight lines above
 
-### fatih/vim-go
+### [fatih/vim-go](https://github.com/fatih/vim-go)
 
 https://www.diycode.cc/projects/fatih/vim-go
 
@@ -444,9 +458,7 @@ https://www.diycode.cc/projects/fatih/vim-go
   | :GoImportAs <name> <package> | add package with package name (ex. str strings)           |
   | :GoDrop <package>            | remove package from imports
 
-#### vim-go Tutorial
-
-https://github.com/fatih/vim-go-tutorial
+#### [vim-go Tutorial](https://github.com/fatih/vim-go-tutorial)
 
     :GoRun %  - go run on current file
     :GoRun - go run on whole package
@@ -490,7 +502,7 @@ https://github.com/fatih/vim-go-tutorial
 
 ### kien/ctrlp.vim (fuzzy finder)
 
-  Find anything from VIM http://www.youtube.com/watch?v=9XrHk3xjYsw
+  [Find anything from VIM tutorial](http://www.youtube.com/watch?v=9XrHk3xjYsw)
 
     Once CtrlP is open
 
